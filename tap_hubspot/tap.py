@@ -64,7 +64,6 @@ STREAM_TYPES = [
     PropertiesDealsStream,
     PropertiesMeetingsStream,
     OwnersStream,
-
     ## Marketing
     MarketingEmailsStream,
     MarketingCampaignIdsStream,
@@ -72,14 +71,11 @@ STREAM_TYPES = [
     MarketingFormsStream,
     MarketingListsStream,
     MarketingListContactsStream,
-
     # Events
     WebAnalyticsContactsStream,
     WebAnalyticsDealsStream,
-
     ## Analytics
     AnalyticsViewsStream,
-
     ## Automation
     WorkflowsStream,
 ]
@@ -92,27 +88,9 @@ class TapHubspot(Tap):
 
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "client_id",
-            th.StringType,
-            required=True,
-            description="PRIVATE client id for Hubspot API",
-        ),
-        th.Property(
-            "client_secret",
-            th.StringType,
-            required=True,
-            description="PRIVATE client secret for Hubspot API",
-        ),
-        th.Property(
-            "refresh_token",
-            th.StringType,
-            required=True,
-            description="PRIVATE refresh token for Hubspot API",
-        ),
-        th.Property(
             "access_token",
             th.StringType,
-            required=False,
+            required=True,
             description="PRIVATE Access Token for Hubspot API",
         ),
         th.Property(
